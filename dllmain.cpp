@@ -126,7 +126,7 @@ void InitT3MLL()
     // Make font-generating bitmap larger as 512x512 is not enough for bigger font sizes
     pattern = hook::module_pattern(GetModuleHandle(L"T3.MLL"), "6A 00 6A 20 6A 01 68 00 02 00 00 68 00 02 00 00");
     match = pattern.get_one();
-    injector::WriteMemory(match.get<uint32_t*>(7), 1024, true); //height
+    injector::WriteMemory(match.get<uint32_t*>(7), 2048, true); //height
     //injector::WriteMemory(match.get<uint32_t*>(12), 512, true); // width
 
     // Make font-generating save in DXT3 instead of DXT5 as DXT5 creates crazy artefacts in the alpha channel
